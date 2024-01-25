@@ -1,0 +1,433 @@
+@font-face {
+    font-family: husky;
+    src: url('/css/Husky.woff');
+}
+
+@font-face {
+    font-family: strom;
+    src: url('/css/Strombon-Regular.woff');
+}
+
+body {
+    background-color: antiquewhite;
+    background-image: url('/img/Vintage-floral-paper1.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+img{
+    border-radius: 30px;
+}
+
+.main {
+    margin: 1%;
+}
+
+.header h1 {
+    text-align: center;
+    margin: 1%;
+    padding: 2%;
+    font-family: husky;
+    font-size: 600%;
+    color: pink;
+    text-shadow: 1px 1px 5px black, 0 0 7px darkblue;
+    background-image: url('/img/otsikko2.png');
+    background-position: center;
+    background-repeat: no-repeat;
+
+
+}
+
+.menu ul {
+    list-style: none;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 1%;
+    background-image: url('/img/teksti_pohja6.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+
+}
+
+.menu li {
+    display: inline-block;
+}
+
+.menu li a {
+    font-family: husky;
+    display: inline-block;
+    font-size: 200%;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0.5em 1em;
+}
+
+.menu li a.active {
+    font-weight: bold;
+    border-radius: 12px;
+    padding-top: 2px;
+    padding-bottom: 4px;
+    color: pink;
+    text-shadow: 1px 1px 5px black, 0 0 7px darkblue;
+    ;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+.menu li a:hover {
+    background-color: antiquewhite;
+    font-weight: bold;
+    border: 2px solid black;
+    border-radius: 12px;
+    padding-top: 2px;
+    padding-bottom: 4px;
+    color: darkcyan;
+    text-shadow: 1px 1px 3px white;
+}
+
+.gallery {
+    width: 100%;
+}
+
+.gallery-container {
+    align-items: center;
+    display: flex;
+    height: 400px;
+    margin: 0 auto;
+    max-width: 1000px;
+    position: relative;
+}
+
+.gallery-item {
+    height: 200px;
+    opacity: 0;
+    position: absolute;
+    transition: all 0.3s ease-in-out;
+    width: 330px;
+    z-index: 0;
+    border-radius: 15px;
+    background-size: contain;
+}
+
+.gallery-item-1 {
+    left: 15%;
+    opacity: .4;
+    transform: translateX(-50%);
+}
+
+.gallery-item-2,
+.gallery-item-4 {
+    height: 350px;
+    opacity: 0.8;
+    width: 350px;
+    z-index: 1;
+}
+
+.gallery-item-2 {
+    left: 30%;
+    transform: translateX(-50%);
+}
+
+.gallery-item-3 {
+    box-shadow: -2px 5px 33px 6px rgba(0, 0, 0, 0.35);
+    height: 400px;
+    opacity: 1;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    z-index: 2;
+}
+
+.gallery-item-4 {
+    left: 70%;
+    transform: translateX(-50%);
+}
+
+.gallery-item-5 {
+    left: 85%;
+    opacity: .4;
+    transform: translateX(-50%);
+}
+
+
+
+.gallery-controls {
+    display: flex;
+    justify-content: center;
+    margin: 25px 0;
+    height: 100px;
+}
+
+.gallery-controls button {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    font-size: 30px;
+    margin: 0 50px;
+    padding: 0 12px;
+    text-transform: capitalize;
+}
+
+.gallery-controls-button:focus {
+    outline: none;
+}
+
+.gallery-controls-previous {
+    position: relative;
+}
+
+.gallery-controls-previous::before {
+    border: solid #000;
+    border-width: 0 5px 5px 0;
+    content: '';
+    display: inline-block;
+    height: 5px;
+    left: -30px;
+    padding: 10px;
+    position: absolute;
+    top: 25%;
+    transform: rotate(135deg) translateY(-50%);
+    transition: left 0.15s ease-in-out;
+    width: 5px;
+}
+
+.gallery-controls-previous:hover::before {
+    left: -40px;
+}
+
+.gallery-controls-next {
+    position: relative;
+}
+
+.gallery-controls-next::before {
+    border: solid #000;
+    border-width: 0 5px 5px 0;
+    content: '';
+    display: inline-block;
+    height: 5px;
+    right: -30px;
+    padding: 10px;
+    position: absolute;
+    top: 45%;
+    transform: rotate(-45deg) translateY(-50%);
+    transition: left 0.15s ease-in-out;
+    width: 5px;
+}
+
+.gallery-controls-next:hover::before {
+    right: -40px;
+}
+
+.gallery-nav {
+    bottom: -15px;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.gallery-nav li {
+    background: #ccc;
+    border-radius: 50%;
+    height: 10px;
+    margin: 0 16px;
+    width: 10px;
+}
+
+.gallery-nav li.gallery-item-selected {
+    background: #555;
+}
+
+.tekstikuva {
+    display: flex;
+    padding: 2%;
+    margin: 20%, 5%;
+    text-align: center;
+}
+
+.tekstikuva p {
+    margin: 13%;
+    font-size: 150%;
+    font-family: strom;
+    font-weight: bolder;
+}
+
+.tekstikuva ul {
+
+    margin: 7%;
+}
+
+h3 {
+    margin: 10%;
+    font-size: 300%;
+    font-family: husky;
+}
+
+.tekstikuva img {
+    width: 50%;
+}
+
+
+.tvasen {
+    background-image: url('/img/teksti_pohja5.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.tvasen li {
+    list-style-image: url('/img/koira/latetassu.png');
+    font-size: 150%;
+    font-family: strom;
+    font-weight: bolder;
+    text-align: left;
+    padding: 1%;
+}
+
+
+.toikea {
+    background-image: url('/img/teksti_pohja2.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.toikea li {
+    list-style-image: url('/img/koira/seratassu.png');
+    font-size: 150%;
+    font-family: strom;
+    font-weight: bolder;
+    text-align: left;
+    padding: 1%;
+}
+
+.kuvaoikea img {
+    border-radius: 30px;
+    margin-top: 20%;
+}
+
+
+.teksti {
+    background-image: url('/img/teksti_pohja5.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 2%;
+    margin: -10%;
+}
+
+.teksti p {
+    font-size: 150%;
+    font-family: strom;
+    font-weight: bolder;
+    padding: 10%;
+    padding-left: 35%;
+    padding-right: 35%;
+
+}
+
+.suunnitelma {
+    border-radius: 30px;
+    width: 50%;
+    background-image: url('/img/ompelu/DBP-Country-Chic-Background-6.png');
+    margin: 2%;
+}
+
+.suunnitelma th {
+    font-family: husky;
+    height: 0.1%;
+    text-align: center;
+    font-size: 220%;
+    color: black;
+    border-bottom: 5px solid antiquewhite;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    text-shadow: 1px 1px 5px white;
+
+}
+
+.suunnitelma td {
+    height: 50px;
+    font-family: strom;
+    font-size: 140%;
+    text-align: center;
+    font-weight: bolder;
+    color: black;
+    border: 1px solid antiquewhite;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-collapse: separate;
+}
+
+.suunnitelma tr:nth-child(even) {
+    background: rgba(0, 255, 255, 0.3)
+}
+
+#taulukon_vie {
+    background-image: url('/img/teksti_pohja2.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 50%;
+    font-size: 130%;
+    font-family: strom;
+    font-weight: bolder;
+}
+
+.taulukkoteksti {
+    display: flex;
+    padding: 2%;
+    margin: 10%, 5%;
+    text-align: center;
+}
+
+.taulukkoteksti p {
+    padding-left: 12%;
+    padding-right: 12%;
+    padding-top: 12%;
+    padding-bottom: 3%;
+}
+
+table {
+    width: 80%;
+    margin-left: 10%;
+    margin-bottom: 18%;
+}
+
+th {
+    color: darkcyan;
+    padding: 2%;
+}
+
+
+footer {
+    text-align: center;
+    color: antiquewhite;
+    text-shadow: 1px 1px 7px black, 0 0 9px darkblue;
+    font-family: husky;
+    font-size: 200%;
+    margin: 5%;
+    padding: 2%;
+    background-image: url('/img/Vintage\ Raven\ and\ Floral\ Seamless\ Pattern\ Tape\ 3.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+}
